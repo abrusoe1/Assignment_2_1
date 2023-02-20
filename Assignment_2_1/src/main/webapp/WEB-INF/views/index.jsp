@@ -5,8 +5,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Homepage</title>
+	<meta charset="UTF-8">
+	<title>Homepage</title>
+	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 	<h1 style="font-size:70px">

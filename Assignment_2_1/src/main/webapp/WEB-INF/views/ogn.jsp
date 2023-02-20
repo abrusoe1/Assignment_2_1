@@ -5,15 +5,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Oh God No</title>
+	<meta charset="UTF-8">
+	<title>Oh God No</title>
+	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 	<h1>Specialty Pizza: Oh God No</h1>
 	<p>
 		Name: ${ name }
 		<br />
-		Price: $${ price }0
+		Price: <fmt:formatNumber value="${ price }" type="currency" />
 	</p>
 	<a href="/">Back to Homepage</a>
 

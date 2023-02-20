@@ -62,9 +62,46 @@ public class PizzaController
 	}
 
 	@RequestMapping("/build")
-	public String buildOrder()
+	public String buildOrder(Model model)
 	{
+		String[] toppings = {"Extra cheese", "Pepperoni", "Sausage", "Mushroom", "Onion", "Green pepper", "Tomato", "Garlic", "Basil"};
+		model.addAttribute ("toppings", toppings);
 		return "build";
+	}
+	
+	@RequestMapping("/submit")
+	public String builtOrder(@RequestParam String size, @RequestParam int number, @RequestParam(required=false) boolean crust, Model model)
+	{
+		model.addAttribute("size", size);
+		model.addAttribute("number", number);
+		double startNum;
+		double multiplier;	   //topping price multiplier
+		double crustSurcharge = 0;
+		if (size.equals("small"))
+		{
+			startNum = 7;
+			multiplier = 0.75;
+		}
+		else if (size.equals("medium"))
+		{
+			startNum = 10;
+			multiplier = 1;
+		}
+		else
+		{
+			startNum = 12;
+			multiplier = 1.25;
+		}
+		
+		if (crust == true)
+		{
+			crustSurcharge = 2;
+		}
+		
+		double price = startNum + (number * multiplier) + crustSurcharge;
+		model.addAttribute("price", price);
+		
+		return "submit";
 	}
 	
 }

@@ -3,8 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Submitted Review</title>
+	<meta charset="UTF-8">
+	<title>Submitted Review</title>
+	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 	<h1>Thank you for your review!</h1>

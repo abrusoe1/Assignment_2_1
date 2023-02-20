@@ -5,8 +5,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Review</title>
+	<meta charset="UTF-8">
+	<title>Review</title>
+	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 	<h1>Leave a Review</h1>
@@ -17,7 +18,7 @@
 		<b>Comment:</b>
 		<br />
 		<textarea name="comment" rows="5"></textarea>
-		<%-- Comment: <input name="comment" /> --%>
+		<input name="comment" />
 		<br />
 		<br />
 		<b>Rating:</b>

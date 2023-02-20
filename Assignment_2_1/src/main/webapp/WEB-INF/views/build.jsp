@@ -5,30 +5,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Pizza Builder</title>
+	<meta charset="UTF-8">
+	<title>Pizza Builder</title>
+	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 	<h1>Build your own pizza</h1>
-	<form action="/review-submit" method="post">
+	<form action="/submit" method="post">
 		<b>Size</b>
 		<select name="size">
-			<option value=size-id>Small</option>
-			<option value=size-id>Medium</option>
-			<option value=size-id>Large</option>
+			<option value=small>Small</option>
+			<option value=medium>Medium</option>
+			<option value=large>Large</option>
 		</select>
 		<br />
 		<br />
-		<b>How many toppings?</b> <input name="name" />
-		<%-- Comment: <input name="comment" /> --%>
-		<br />
+		<b>How many toppings?</b> <input name="number" type="number" />
+		<ul>
+			<c:forEach items="${ toppings }" var="top">
+				<li> ${ top } </li>
+			</c:forEach>
+		</ul>
 		<br />
 		<input name="crust" type="checkbox"/><b>Gluten-free crust?</b>($2 extra) 
 		<br />
 		<br />
 		<b>Special Instructions (Optional):</b>
 		<br />
-		<textarea name="comment" rows="5"></textarea>
+		<textarea name="buildcomment" rows="5"></textarea>
+		<input name="buildcomment" />
 		<br />
 		<br />
 		<button type="submit">Calculate Price</button>
